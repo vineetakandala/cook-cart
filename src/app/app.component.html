@@ -1,7 +1,7 @@
-<app-header></app-header>
+<app-header (feature)="onSelect($event)"></app-header>
 <div class="container">
-  <app-cart></app-cart>
-  <app-cookbook></app-cookbook>
+  <app-cart *ngIf="feature === 'Cart'"></app-cart>
+  <app-cookbook *ngIf="feature !== 'Cart'"></app-cookbook>
 </div>
 
 

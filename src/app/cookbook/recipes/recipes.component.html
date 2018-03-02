@@ -5,17 +5,11 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col-sm-6 col-md-4" *ngFor="let recipe of recipes">
-    <a href="#" class="recipe">
-      <figure>
-        <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="img-responsive">
-        <figcaption>
-          <h4>{{ recipe.name }}</h4>
-          <p>{{ recipe.description }}</p>
-        </figcaption>
-      </figure>
-    </a>
-  </div>
+
+  <app-recipe
+    *ngFor="let recipe of recipes"
+    [recipe] = recipe
+    (selectedRecipe)="onSelectedRecipe(recipe)"
+  ></app-recipe>
 </div>
-<app-recipe></app-recipe>
-<app-recipe-detail></app-recipe-detail>
+<!--<app-recipe-detail></app-recipe-detail>-->

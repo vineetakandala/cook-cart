@@ -4,6 +4,13 @@
   </div>
   <div class="col-sm-8">
     <app-recipe-search></app-recipe-search>
-    <app-recipes></app-recipes>
+    <app-recipes
+      (selectedRecipe)="this.detailRecipe = $event"
+      *ngIf="!detailRecipe"
+    ></app-recipes>
+    <app-recipe-detail
+      (allRecipes)="this.detailRecipe=null"
+      *ngIf="detailRecipe"
+    ></app-recipe-detail>
   </div>
 </div>
