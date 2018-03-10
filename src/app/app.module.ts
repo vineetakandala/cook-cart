@@ -12,6 +12,10 @@ import { RecipeDetailComponent } from './cookbook/recipe-detail/recipe-detail.co
 import { RecipeSearchComponent } from './cookbook/recipe-search/recipe-search.component';
 import { RecipeFilterComponent } from './cookbook/recipe-filter/recipe-filter.component';
 import { HeaderComponent } from './header/header.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import {CartService} from './cart/cart.service';
+import {AppRoutingModule} from './app-routing.module';
+import {CookbookService} from './cookbook/cookbook.service';
 
 
 @NgModule({
@@ -25,12 +29,17 @@ import { HeaderComponent } from './header/header.component';
     RecipeDetailComponent,
     RecipeSearchComponent,
     RecipeFilterComponent,
-    HeaderComponent
+    HeaderComponent,
+    DropdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    CartService,
+    CookbookService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,18 +1,18 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">CookCart</a>
+    <div class="navbar-header" routerLinkActive="active">
+      <a [routerLink]="['/']" class="navbar-brand">CookCart</a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
         <i class="ion-navicon"></i>
       </button>
     </div>
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onNavigate('Cookbook')">Cookbook</a></li>
-        <li><a href="#" (click)="onNavigate('Cart')">Cart</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['cookbook', 'recipes']">Cookbook</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['cart']">Cart</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown" appDropdown>
           <a href="#" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Save Data</a></li>

@@ -1,13 +1,12 @@
 <div class="col-sm-6 col-md-4">
-  <a href="#"
-     class="recipe"
-     (click)="onSelect()"
+  <a
+    (click)="onSelect()"
+    class="recipe"
   >
     <figure>
-      <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="img-responsive">
+      <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="img-thumbnail">
       <figcaption>
         <h4>{{ recipe.name }}</h4>
-        <p>{{ recipe.description }}</p>
       </figcaption>
     </figure>
   </a>
