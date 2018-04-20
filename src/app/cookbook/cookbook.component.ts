@@ -1,6 +1,4 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {Recipe} from './recipe.model';
-import {CookbookService} from './cookbook.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-cookbook',
@@ -8,5 +6,5 @@ import {CookbookService} from './cookbook.service';
   styleUrls: ['./cookbook.component.scss']
 })
 export class CookbookComponent {
-
+  constructor() {}
 }

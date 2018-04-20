@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Ingredient} from '../../shared/igredient.model';
 import {CartService} from '../cart.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-cart-edit',
@@ -9,18 +10,17 @@ import {CartService} from '../cart.service';
 })
 export class CartEditComponent implements OnInit {
 
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('amountInput') amountInputRef: ElementRef;
+  @ViewChild('f') addIngredientsForm: ElementRef;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }
 
-  onAddIngredient(){
+  onAddIngredient(form: NgForm){
     const newIngredient = new Ingredient(
-      this.nameInputRef.nativeElement.value,
-      this.amountInputRef.nativeElement.value
+      form.value.ingredientName,
+      form.value.ingredientAmount
     );
     this.cartService.addIngredient(newIngredient);
   }

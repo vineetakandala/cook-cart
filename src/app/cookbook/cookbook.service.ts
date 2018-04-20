@@ -5,7 +5,6 @@ import {Ingredient} from '../shared/igredient.model';
 export class CookbookService {
 
   recipeSelected = new EventEmitter<Recipe>();
-  bleh = new EventEmitter<string>();
 
   private recipes: Recipe[] = [
     new Recipe(
@@ -60,12 +59,12 @@ new Recipe(
       [new Ingredient('Spaghetti', 1), new Ingredient('Parsley', 1), new Ingredient('Alfredo Sauce', 1)])
     ];
 
-  getRecipes(){
+  getRecipes() {
     return this.recipes.slice();
   }
 
-  getRecipe(recipe: Recipe) {
-    return recipe;
+  getRecipe(id: number) {
+    return this.recipes.slice()[id];
   }
 
 }

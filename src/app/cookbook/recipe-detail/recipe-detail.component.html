@@ -1,7 +1,10 @@
 <div class="row" >
   <div class="col-xs-12">
-    <a [routerLink]="['../']">Back to all Recipes</a>
+    <a
+      [routerLink]="['../../']"
+    >Back to all Recipes</a>
   </div>
+  <div *ngIf="detailRecipe; else loading">
   <div class="col-xs-12">
     <h3>{{ detailRecipe.name }}</h3>
     <img src="{{ detailRecipe.imagePath }}"
@@ -40,8 +43,12 @@
       <button class="btn btn-success" type="button" (click)="onAddToCart()">Add to Cart</button>
     </div>
     <div class="pull-right">
-      <button class="btn btn-warning">Edit Recipe</button>
+      <button class="btn btn-warning" (click)="onEditRecipe()">Edit Recipe</button>
       <button class="btn btn-danger">Delete Recipe</button>
     </div>
   </div>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
 </div>

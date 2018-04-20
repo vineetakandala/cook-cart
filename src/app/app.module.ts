@@ -16,6 +16,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import {CartService} from './cart/cart.service';
 import {AppRoutingModule} from './app-routing.module';
 import {CookbookService} from './cookbook/cookbook.service';
+import { RecipeEditComponent } from './cookbook/recipe-edit/recipe-edit.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -30,11 +32,13 @@ import {CookbookService} from './cookbook/cookbook.service';
     RecipeSearchComponent,
     RecipeFilterComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     CartService,

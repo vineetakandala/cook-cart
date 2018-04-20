@@ -10,15 +10,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class RecipeComponent {
 
   @Input() recipe: Recipe;
+  @Input() id: number;
 
-  constructor(private cookbookService: CookbookService, private router: Router, private route: ActivatedRoute) {
-  }
-
-  onSelect() {
-    this.cookbookService.recipeSelected.emit(this.recipe);
-    console.log('emitted recipe');
-    console.log(this.recipe);
-    this.router.navigate([this.recipe.name], {relativeTo: this.route});
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
 }
